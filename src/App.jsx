@@ -37,7 +37,7 @@ function App() {
       <NoProjectSelected onAddProject={handleStartAddProject} />
     );
   } else if (projectsState.selectedProjectId === null) {
-    projectSelected = <NewProject onSave={handleAddProject} />;
+    projectSelected = <NewProject onAdd={handleAddProject} />;
   }
   return (
     <main className="h-screen flex my-8 gap-8">
