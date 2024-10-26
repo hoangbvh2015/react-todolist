@@ -12,8 +12,8 @@ export default function NewProject({ onAdd }) {
   function handleSave() {
     const title = titleRef.current.value?.trim();
     const description = descriptionRef.current.value.trim();
-    const duaDate = dueDateRef.current.value.trim();
-    if (!title || description || duaDate) {
+    const dueDate = dueDateRef.current.value.trim();
+    if (!title || !description || !dueDate) {
       modal.current.open();
       return;
     }
@@ -22,7 +22,7 @@ export default function NewProject({ onAdd }) {
       id: date.getTime(),
       title,
       description,
-      duaDate,
+      dueDate,
     };
     onAdd(dataProject);
   }
@@ -48,7 +48,7 @@ export default function NewProject({ onAdd }) {
         <div>
           <Input ref={titleRef} label={"Title"} />
           <Input ref={descriptionRef} textarea label={"Description"} />
-          <Input ref={dueDateRef} label={"Due Date"} />
+          <Input ref={dueDateRef} type="date" label={"Due Date"} />
         </div>
       </div>
     </>
